@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${roboto_mono.variable} ${"font-sans"}`}>
+      <body className={`${inter.variable} ${roboto_mono.variable} font-sans min-h-screen bg-background antialiased`}>
         {children}
       </body>
     </html>

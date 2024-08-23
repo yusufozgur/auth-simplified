@@ -18,11 +18,15 @@ pnpx create-next-app@rc
 
 Then some bulk from /src/app/page.tsx, layout.tsx and globals.css is removed.
 
+## shadcn
+```
+pnpm create next-app@latest my-app --typescript --tailwind --eslint
+```
+All default options
+
 ## drizzle 
 
 ### w supabase
-
-## shadcn
 
 ## setting vscode debugging
 

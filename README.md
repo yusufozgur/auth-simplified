@@ -24,6 +24,14 @@ pnpm create next-app@latest my-app --typescript --tailwind --eslint
 ```
 All default options
 
+```
+pnpm dlx shadcn-ui@latest add button card input label
+```
+
+## component testing
+
+/test_components route can be used to develop and test components before implementing them in app logic
+
 ## drizzle 
 
 ### w supabase

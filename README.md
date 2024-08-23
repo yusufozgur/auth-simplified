@@ -1,36 +1,29 @@
+# Auth Simplified
+If you need a simple auth solution for your Next.js projects that you can easily understand and customize, this is your repo.
+-   Main Auth logic is implemented by Lucia Auth. As their documentation is severely lacking at the moment, you can use this repo as a reference.
+-   It uses Next.js with its server actions, so the auth logic stays on server.
+-   Drizzle ORM is used, so the db queries are close to native SQL syntax, which makes it more approachable to beginners.
+-   Customized to use supabase as database provider, but the Drizzle ORM settings can be changed to support other db providers.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
 
-## Getting Started
+# Steps used to create this repo
 
-First, run the development server:
+## create Next.js project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Next 15 is currently a RC(Release candidate)
+```
+pnpx create-next-app@rc
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then some bulk from /src/app/page.tsx, layout.tsx and globals.css is removed.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## drizzle 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Inter, a custom Google Font.
+### w supabase
 
-## Learn More
+## shadcn
 
-To learn more about Next.js, take a look at the following resources:
+## setting vscode debugging
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## creating and testing components

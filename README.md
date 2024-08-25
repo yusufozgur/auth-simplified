@@ -39,12 +39,40 @@ pnpm add drizzle-orm postgres
 pnpm add -D drizzle-kit
 ```
 
+note, in order to use db.query.tablename notation, 
+    make a /db/index.ts like this:
+```
+import * as schema from './schema';
+import postgres from "postgres";
+import { drizzle } from "drizzle-orm/postgres-js";
+
+const connectionString = process.env.DATABASE_URL
+const client = postgres(connectionString!, { prepare: false })
+const db = drizzle(client, { schema });
+```
+
 ### w supabase
 
 ## setting vscode debugging
 
 ## creating and testing components
 
+## lucia auth/index.ts db adapter
+
+## lucia user column
+
 ## add a admin adder cli script
 
+
+## Playwright
 ## write end to end tests for diff login combs
+
+
+
+# TODO
+
+
+## login throttling
+### username and password based
+### ip based
+### captcha

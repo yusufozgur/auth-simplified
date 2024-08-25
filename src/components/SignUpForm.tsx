@@ -12,6 +12,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useFormStatus } from "react-dom"
+import { useActionState } from "react"
+import { SignupAction } from "@/lib/Auth/SignupAction"
 
 function SubmitButton() {
     const { pending, data, method, action } = useFormStatus();
@@ -22,11 +24,12 @@ function SubmitButton() {
     )
 }
 
-export function SignUpForm(
-    { form_action }: { form_action: string | ((formData: FormData) => void) | undefined }
-) {
+export function SignUpForm() {
+
+    const [signUpError, form_action_w_state] = useActionState(SignupAction, "");
+
     return (
-        <form action={form_action}>
+        <form action={form_action_w_state}>
             <Card className="mx-auto max-w-sm">
                 <CardHeader>
                     <CardTitle className="text-xl">Sign Up</CardTitle>
@@ -47,12 +50,11 @@ export function SignUpForm(
                             </div>
                         </div>
                         <div className="grid gap-2">
-                            <Label htmlFor="email" >Email</Label>
+                            <Label htmlFor="email" >Username</Label>
                             <Input
-                                id="email"
-                                type="email"
-                                name="email"
-                                placeholder="m@example.com"
+                                id="username"
+                                name="username"
+                                placeholder="username"
                                 required
                             />
                         </div>
@@ -71,6 +73,7 @@ export function SignUpForm(
                             Sign in
                         </Link>
                     </div>
+                    <div className="text-red-600">{signUpError}</div>
                 </CardContent>
             </Card>
         </form>

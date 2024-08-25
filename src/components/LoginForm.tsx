@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label"
 import { test_action } from "@/app/test_action"
 import { useFormStatus } from "react-dom"
 import { useActionState } from "react"
+import { LoginAction } from "@/lib/Auth/Login_Action"
 
 //making SubmitButton disabled during form submissions
 function SubmitButton() {
@@ -22,13 +23,9 @@ function SubmitButton() {
     )
 }
 
-export function LoginForm(
-    { form_action }: {
-        form_action: (prevLoginError: string, formData: FormData) => string
-    }
-) {
+export function LoginForm() {
 
-    const [loginError, form_action_w_state] = useActionState(form_action, "initial");
+    const [loginError, form_action_w_state] = useActionState(LoginAction, "");
 
     return (
         <form action={form_action_w_state}>

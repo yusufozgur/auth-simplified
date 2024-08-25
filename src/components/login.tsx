@@ -52,7 +52,7 @@ export function LoginForm(
                 <CardFooter>
                     <SubmitButton />
                 </CardFooter>
-                <div className="text-red-600">{loginError}</div>
+                <div className="text-red-600 text-center">{loginError}</div>
             </Card>
         </form>
     )

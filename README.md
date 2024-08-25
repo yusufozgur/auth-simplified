@@ -46,3 +46,5 @@ pnpm add -D drizzle-kit
 ## creating and testing components
 
 ## add a admin adder cli script
+
+## write end to end tests for diff login combs

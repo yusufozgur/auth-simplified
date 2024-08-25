@@ -34,8 +34,15 @@ pnpm dlx shadcn-ui@latest add button card input label
 
 ## drizzle 
 
+```
+pnpm add drizzle-orm postgres
+pnpm add -D drizzle-kit
+```
+
 ### w supabase
 
 ## setting vscode debugging
 
 ## creating and testing components
+
+## add a admin adder cli script

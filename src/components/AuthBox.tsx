@@ -1,7 +1,8 @@
+"use server"
 import { Button } from "./ui/button";
 import Link from "next/link";
 
-export function AuthBoxLoggedIn(
+export async function AuthBoxLoggedIn(
     { username, role }:
         { username: string, role?: string }) {
     return (
@@ -11,7 +12,7 @@ export function AuthBoxLoggedIn(
         </div>
     )
 }
-export function AuthBoxNotLoggedIn() {
+export async function AuthBoxNotLoggedIn() {
     return (
         <div>
             <Button asChild><Link href="/sign_in">Sign in</Link></Button>

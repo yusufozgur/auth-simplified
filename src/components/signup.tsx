@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
@@ -10,9 +11,19 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useFormStatus } from "react-dom"
+
+function SubmitButton() {
+    const { pending, data, method, action } = useFormStatus();
+    return (
+        <Button type="submit" className="w-full" disabled={pending}>
+            Create an account
+        </Button>
+    )
+}
 
 export function SignUpForm(
-    form_action: string | ((formData: FormData) => void) | undefined
+    { form_action }: { form_action: string | ((formData: FormData) => void) | undefined }
 ) {
     return (
         <form action={form_action}>
@@ -28,29 +39,28 @@ export function SignUpForm(
                         <div className="grid grid-cols-2 gap-4">
                             <div className="grid gap-2">
                                 <Label htmlFor="first-name">First name</Label>
-                                <Input id="first-name" placeholder="Max" required />
+                                <Input id="first-name" name="first-name" placeholder="Max" required />
                             </div>
                             <div className="grid gap-2">
-                                <Label htmlFor="last-name">Last name</Label>
-                                <Input id="last-name" placeholder="Robinson" required />
+                                <Label htmlFor="last-name" >Last name</Label>
+                                <Input id="last-name" placeholder="Robinson" name="last-name" required />
                             </div>
                         </div>
                         <div className="grid gap-2">
-                            <Label htmlFor="email">Email</Label>
+                            <Label htmlFor="email" >Email</Label>
                             <Input
                                 id="email"
                                 type="email"
+                                name="email"
                                 placeholder="m@example.com"
                                 required
                             />
                         </div>
                         <div className="grid gap-2">
-                            <Label htmlFor="password">Password</Label>
-                            <Input id="password" type="password" />
+                            <Label htmlFor="password" >Password</Label>
+                            <Input id="password" type="password" name="password" />
                         </div>
-                        <Button type="submit" className="w-full">
-                            Create an account
-                        </Button>
+                        <SubmitButton />
                         <Button variant="outline" className="w-full">
                             Sign up with GitHub
                         </Button>

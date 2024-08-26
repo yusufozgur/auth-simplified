@@ -14,7 +14,7 @@ function random_username(length: number) {
 }
 
 const username = random_username(10)
-const main_page = 'http://localhost:3000/'
+const main_page = process.env.DEPLOYMENT_URL!
 
 
 test('test', async ({ page }) => {

@@ -1,6 +1,6 @@
 name: This is an example
 
-on: [pull_request]
+on: push
 
 jobs:
   one:

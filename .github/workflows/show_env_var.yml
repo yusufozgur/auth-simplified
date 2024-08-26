@@ -1,7 +1,5 @@
-name: This is an example
-
+name: Diagnostics
 on: push
-
 jobs:
   one:
     runs-on: ubuntu-latest
@@ -12,7 +10,5 @@ jobs:
     steps:
       - name: Print Branch name
         run: echo "$BRANCH_NAME"
-      - name: Print predicted vercel deployment
-        run: echo $DEPLOY_URL
       - name: Print predicted vercel deployment
         run: echo $DEPLOY_URL

@@ -65,12 +65,11 @@ const db = drizzle(client, { schema });
 
 
 ## Playwright
-## write end to end tests for diff login combs
+## write end to end tests for diff login combs, fail expectations
 
 
 
 # TODO
-
 
 ## login throttling
 ### username and password based

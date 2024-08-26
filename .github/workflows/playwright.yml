@@ -3,17 +3,19 @@ on:
   deployment_status:
 jobs:
   tests:
-    env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-      DEPLOY_URL: auth-simplified-git-${{ github.head_ref || github.ref_name }}-ys-projects-66eab976.vercel.app
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      DEPLOY_URL: auth-simplified-git-${{ github.head_ref || github.ref_name }}-ys-projects-66eab976.vercel.app
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+    - name: predicted deploy url is
+      run: echo $DEPLOY_URL
     - name: Install dependencies
       run: npm install -g pnpm && pnpm install
     - name: Install Playwright Browsers

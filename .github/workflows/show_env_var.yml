@@ -5,6 +5,7 @@ on: push
 jobs:
   one:
     runs-on: ubuntu-latest
+    environment: test
     steps:
       - name: Dump GitHub context
         env:
@@ -32,6 +33,8 @@ jobs:
         run: echo "$MATRIX_CONTEXT"
       - name: vars
         run: echo ${{ vars.DEPLOYMENT_URL }}
+      - name: secrets
+        run: echo ${{ secrets.DEPLOYMENT_URL }}
 
       - name: Show default environment variables
         run: |

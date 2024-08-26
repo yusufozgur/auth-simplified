@@ -2,7 +2,10 @@ name: Playwright Tests
 on:
   deployment_status:
 jobs:
-  test:
+  tests:
+    environment: test
+    env:
+      DEPLOYMENT_URL: ${{ secrets.DEPLOYMENT_URL }}
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     timeout-minutes: 60
     runs-on: ubuntu-latest

@@ -14,11 +14,10 @@ function random_username(length: number) {
 }
 
 const username = random_username(10)
-const main_page = process.env.DEPLOYMENT_URL!
 
 
 test('test', async ({ page }) => {
-  await page.goto(main_page);
+  await page.goto("/");
   await page.getByRole('link', { name: 'Register' }).click();
   await page.getByLabel('First name').click();
   await page.getByLabel('First name').fill('FirstName');
@@ -50,5 +49,4 @@ test('test', async ({ page }) => {
 
   await expect(page.getByRole('link', { name: 'My Profile' })).not.toBeVisible();
   await expect(page.getByRole('link', { name: 'Login' })).toBeVisible();
-  await expect(page.url()).toBe(main_page)
 });

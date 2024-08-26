@@ -50,7 +50,6 @@ const connectionString = process.env.DATABASE_URL
 const client = postgres(connectionString!, { prepare: false })
 const db = drizzle(client, { schema });
 ```
-
 ### w supabase
 
 ## setting vscode debugging

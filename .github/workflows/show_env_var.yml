@@ -1,0 +1,9 @@
+name: Playwright Tests
+on:
+  push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print DEPLOYMENT_URL
+      run: echo "The deployment URL is ${{ secrets.DEPLOYMENT_URL }}"

@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-      DEPLOY_URL: auth-simplified-git-${{ github.head_ref || github.ref_name }}-ys-projects-66eab976.vercel.app
+      DEPLOY_URL: 'auth-simplified-git-${{ github.head_ref || github.ref_name }}-ys-projects-66eab976.vercel.app'
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4

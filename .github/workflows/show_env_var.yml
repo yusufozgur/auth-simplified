@@ -6,7 +6,11 @@ jobs:
   one:
     runs-on: ubuntu-latest
     environment: test
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
+      - name: Print Branch name
+        run: echo "$BRANCH_NAME"
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}

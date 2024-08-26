@@ -11,6 +11,8 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+    - name: Print DEPLOYMENT_URL
+      run: echo "The deployment URL is ${{ secrets.DEPLOYMENT_URL }}"
     - name: Install dependencies
       run: npm install -g pnpm && pnpm install
     - name: Install Playwright Browsers

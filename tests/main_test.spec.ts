@@ -17,7 +17,7 @@ const username = random_username(10)
 
 
 test('test', async ({ page }) => {
-  await page.goto("/");
+  await page.goto(process.env.DEPLOY_URL!);
   await page.getByRole('link', { name: 'Register' }).click();
   await page.getByLabel('First name').click();
   await page.getByLabel('First name').fill('FirstName');

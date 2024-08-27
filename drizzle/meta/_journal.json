@@ -5,29 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1724581576430,
-      "tag": "0000_safe_randall",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1724581613478,
-      "tag": "0001_ancient_monster_badoon",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1724582256144,
-      "tag": "0002_many_spitfire",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1724586326835,
-      "tag": "0003_spotty_cloak",
+      "when": 1724744673657,
+      "tag": "0000_damp_lady_ursula",
       "breakpoints": true
     }
   ]

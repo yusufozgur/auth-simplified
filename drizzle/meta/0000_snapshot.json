@@ -1,12 +1,12 @@
 {
-  "id": "f01dce5c-4607-4cb5-a7f0-1cc1cb47a2d6",
+  "id": "de99f521-e8b6-4b09-840c-b897d4e13613",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "private.session": {
-      "name": "session",
-      "schema": "private",
+    "public.sessionTable": {
+      "name": "sessionTable",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
@@ -29,11 +29,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "session_user_id_user_id_fk": {
-          "name": "session_user_id_user_id_fk",
-          "tableFrom": "session",
-          "tableTo": "user",
-          "schemaTo": "private",
+        "sessionTable_user_id_userTable_id_fk": {
+          "name": "sessionTable_user_id_userTable_id_fk",
+          "tableFrom": "sessionTable",
+          "tableTo": "userTable",
           "columnsFrom": [
             "user_id"
           ],
@@ -47,9 +46,9 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "private.user": {
-      "name": "user",
-      "schema": "private",
+    "public.userTable": {
+      "name": "userTable",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
@@ -68,21 +67,29 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "role",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'normal'"
         }
       },
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "user_username_unique": {
-          "name": "user_username_unique",
+        "userTable_username_unique": {
+          "name": "userTable_username_unique",
           "nullsNotDistinct": false,
           "columns": [
             "username"
           ]
         },
-        "user_password_hash_unique": {
-          "name": "user_password_hash_unique",
+        "userTable_password_hash_unique": {
+          "name": "userTable_password_hash_unique",
           "nullsNotDistinct": false,
           "columns": [
             "password_hash"
@@ -91,10 +98,17 @@
       }
     }
   },
-  "enums": {},
-  "schemas": {
-    "private": "private"
+  "enums": {
+    "public.role": {
+      "name": "role",
+      "schema": "public",
+      "values": [
+        "normal",
+        "admin"
+      ]
+    }
   },
+  "schemas": {},
   "sequences": {},
   "_meta": {
     "columns": {},

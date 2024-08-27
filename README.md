@@ -1,5 +1,7 @@
 # Auth Simplified
+
 If you need a simple auth solution for your Next.js projects that you can easily understand and customize, this is your repo.
+
 -   Main Auth logic is implemented by Lucia Auth. As their documentation is severely lacking at the moment, you can use this repo as a reference.
 -   It uses Next.js with its server actions, so the auth logic stays on server.
 -   Drizzle ORM is used, so the db queries are close to native SQL syntax, which makes it more approachable to beginners.

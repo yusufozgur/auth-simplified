@@ -39,7 +39,7 @@ jobs:
           api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings
 
       - run: |
-          echo "DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }} >> .env
+          echo DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }} >> .env
 
         name: DB Migration
       - run: pnpm run db:migrate

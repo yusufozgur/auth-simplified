@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 18
           cache: "pnpm"
-          
+
       - run: pnpm install
 
       - name: Get git branch name
@@ -35,7 +35,7 @@ jobs:
           username: "neondb_owner" # Change this to the role you use to connect to your database
           database: "neondb"
           # parent: dev # optional (defaults to your primary branch)
-          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}
+          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}
           api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings
 
         #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment

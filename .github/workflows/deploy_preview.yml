@@ -39,6 +39,7 @@ jobs:
           api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings
 
         #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment
+        name: Save db url to .env
       - run: echo "DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}" >> .env
 
         name: DB Migration

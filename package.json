@@ -8,10 +8,13 @@
     "start": "next start",
     "test": "node node_modules\\playwright\\cli.js test",
     "test-report": "node node_modules\\playwright\\cli.js show-report",
+    "db:generate": "npx drizzle-kit generate",
+    "db:migrate": "npx drizzle-kit migrate",
     "lint": "next lint"
   },
   "dependencies": {
     "@lucia-auth/adapter-drizzle": "^1.1.0",
+    "@neondatabase/serverless": "^0.9.4",
     "@node-rs/argon2": "^1.8.3",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",

@@ -24,7 +24,7 @@ jobs:
           cache: "pnpm"
 
       - name: db url to .env
-        run: echo "$DATABASE_URL" >> .env
+        run: echo "DATABASE_URL=$DATABASE_URL" >> .env
 
       - run: pnpm install
 

@@ -58,7 +58,7 @@ jobs:
         run: echo preview_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT
       
       - name: Install testing browsers
-        run: pnpm exec playwright install --with-depsg
+        run: pnpm exec playwright install
       - name: Run Playwright tests
         run: pnpm exec playwright test
 

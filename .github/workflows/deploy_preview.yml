@@ -56,8 +56,6 @@ jobs:
       - name: Deploy Preview to Vercel
         id: deploy
         run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> "$GITHUB_ENV"
-      - name: show prev url
-        run: echo $PREVIEW_URL
       - name: Install testing browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests

@@ -40,6 +40,7 @@ jobs:
 
       - run: |
           echo DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }} >> .env
+          echo "DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }}" >> $GITHUB_ENV
 
         name: DB Migration
       - run: pnpm run db:migrate

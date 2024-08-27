@@ -15,3 +15,6 @@ jobs:
             node-version: 18
             cache: "pnpm"
         - run: pnpm install
+        - name: Get git branch name
+          id: branch-name
+          uses: tj-actions/branch-names@v8

@@ -2,6 +2,20 @@ name: Playwright Tests
 on:
   deployment_status:
 jobs:
+  apply_migrations:
+    environment: Preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install dependencies & tooling
+        run: |
+          npm install --legacy-peer-deps
+          npm install -g drizzle-orm drizzle-kit pg
+      - name: Apply migrations
+        run: drizzle-kit migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
   tests:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     timeout-minutes: 60

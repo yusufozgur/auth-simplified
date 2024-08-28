@@ -18,6 +18,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
     -   Production DB url From Neon, use pooled option for serverless environments.
 -   VERCEL_TOKEN
 
+environment variable
+-   NEON_PROJECT_ID
+
 ## Implementation notes
 
 -   DB name in neon is assumed as neondb

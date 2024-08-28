@@ -41,6 +41,8 @@ jobs:
         #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment
       - name: Save db url to .env
         run: echo "DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}" >> "$GITHUB_ENV"
+      - name: Save db url to .env
+        run: echo "DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}" >> .env
 
       - name: DB Migration
         run: pnpm run db:migrate

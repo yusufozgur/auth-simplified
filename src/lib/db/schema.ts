@@ -25,10 +25,3 @@ export const sessionTable = pgTable("sessionTable", {
         mode: "date"
     }).notNull()
 });
-
-
-const connectionString = process.env.DATABASE_URL
-
-const client = postgres(connectionString!, { prepare: false })
-
-//export const db = drizzle(client, { logger: true });

@@ -1,7 +1,6 @@
-"use server"
 import { LoginForm } from "@/components/LoginForm"
 import { SignUpForm } from "@/components/SignUpForm"
-import { ComponentTester } from "@/components/component_tester"
+import { ComponentTester } from "@/components/component_prototyper"
 import { ReactNode } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -11,7 +10,7 @@ const component_list: { [key: string]: ReactNode } = { // @ts-ignore
     "signup": <SignUpForm />,
 }
 
-export default async function TestComponents() {
+export default function TestComponents() {
 
     return (
         <div>

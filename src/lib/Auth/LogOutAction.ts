@@ -1,12 +1,13 @@
-import { ActionResult } from "next/dist/server/app-render/types";
+"use server"
+import "server-only"
 
+import { ActionResult } from "next/dist/server/app-render/types";
 import { lucia } from "@/lib/Auth";
 import { getUser } from "./ValidateCookies";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export async function LogOut(): Promise<ActionResult> {
-    "use server"
+export async function LogOutAction(): Promise<ActionResult> {
 
     const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null;
     if (!sessionId) return null;

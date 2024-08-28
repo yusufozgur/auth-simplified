@@ -1,4 +1,6 @@
 "use server"
+import "server-only"
+
 import { hash } from "@node-rs/argon2";
 import { generateIdFromEntropySize } from "lucia";
 import { userTable } from "@/lib/db/schema"
@@ -7,22 +9,8 @@ import { AuthArgon2Config } from "./AuthArgon2Config";
 import { zod_password, zod_username } from "./AuthZodStrings";
 import { z } from "zod";
 import { redirect } from "next/navigation";
-import { perform_login } from "./Login_Action";
+import { perform_login } from "./LoginAction";
 import { eq } from "drizzle-orm";
-
-export async function perform_signup(username: string, password: string) {
-
-    const passwordHash = await hash(password, AuthArgon2Config);
-
-    const userId = generateIdFromEntropySize(10);
-
-    await db.insert(userTable).values({
-        id: userId,
-        username: username,
-        password_hash: passwordHash,
-    })
-
-}
 
 export async function SignupAction(prevSignupError: string, formdata: FormData) {
     const username = formdata.get("username")?.toString()

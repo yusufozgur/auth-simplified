@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { getUser } from "@/lib/Auth/ValidateCookies";
 import Link from "next/link";
-import { LogOut } from "@/lib/Auth/LogOut";
+import { LogOutAction } from "@/lib/Auth/LogOutAction";
 import { redirect } from "next/navigation";
+
 export default async function MyProfile() {
     const user = await getUser();
     if (!user) {
@@ -17,10 +18,11 @@ export default async function MyProfile() {
                 </Button>
             </div>
             <div>
-                Your username is: {user.username}
+                <p>Your username is: {user.username}</p>
+                <p>Role: {user.role}</p>
             </div>
             <div>
-                <form action={LogOut}>
+                <form action={LogOutAction}>
                     <Button type="submit">Log Out</Button>
                 </form>
             </div>

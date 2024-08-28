@@ -45,6 +45,9 @@ test('test', async ({ page }) => {
 
   await page.getByRole('link', { name: 'Back to Main Page' }).click();
   await page.getByRole('link', { name: 'My Profile' }).click();
+  await expect(page.getByText('Role: admin')).not.toBeVisible();
+  await expect(page.getByText('Role: normal')).toBeVisible();
+
   await page.getByRole('button', { name: 'Log Out' }).click();
 
   await expect(page.getByRole('link', { name: 'My Profile' })).not.toBeVisible();

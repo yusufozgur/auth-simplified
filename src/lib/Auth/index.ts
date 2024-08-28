@@ -1,3 +1,5 @@
+import "server-only"
+
 import { Lucia } from "lucia";
 import { db } from "@/lib/db/index";
 import { sessionTable, userTable } from "@/lib/db/schema";

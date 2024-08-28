@@ -10,10 +10,9 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { test_action } from "@/app/test_action"
 import { useFormStatus } from "react-dom"
 import { useActionState } from "react"
-import { LoginAction } from "@/lib/Auth/Login_Action"
+import { LoginAction } from "@/lib/Auth/LoginAction"
 
 //making SubmitButton disabled during form submissions
 function SubmitButton() {

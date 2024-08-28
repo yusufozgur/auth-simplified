@@ -1,3 +1,6 @@
+"use server"
+import "server-only"
+
 import { lucia } from "@/lib/Auth";
 import { cookies } from "next/headers";
 import { cache } from "react";
